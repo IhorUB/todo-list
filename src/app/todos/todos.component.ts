@@ -11,6 +11,7 @@ import {delay} from 'rxjs/operators';
 export class TodosComponent implements OnInit {
 
   public loading = true;
+  public searchString = '';
 
   constructor(public todosService: TodosService) {
   }

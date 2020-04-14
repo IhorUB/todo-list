@@ -20,7 +20,7 @@ export class TodosService {
 
   fetchTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos?_limit=33')
-    .pipe(tap(todos => this.todos = todos));
+      .pipe(tap(todos => this.todos = todos));
   }
 
   onToggle(id: number) {
@@ -30,5 +30,9 @@ export class TodosService {
 
   removeTodo(id: number) {
     this.todos = this.todos.filter(t => t.id !== id);
+  }
+
+  addTodo(todo: Todo) {
+    this.todos.push(todo);
   }
 }
